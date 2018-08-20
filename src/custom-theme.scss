@@ -1,0 +1,111 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$md-salmon: (
+  50 : #ffeaea,
+  100 : #ffcbcb,
+  200 : #ffa8a8,
+  300 : #ff8585,
+  400 : #ff6a6a,
+  500 : #ff5050,
+  600 : #ff4949,
+  700 : #ff4040,
+  800 : #ff3737,
+  900 : #ff2727,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffd4d4,
+  A700 : #ffbbbb,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+$md-mint: (
+  50 : #f3fff9,
+  100 : #e0fff0,
+  200 : #ccffe6,
+  300 : #b8ffdb,
+  400 : #a8ffd4,
+  500 : #99ffcc,
+  600 : #91ffc7,
+  700 : #86ffc0,
+  800 : #7cffb9,
+  900 : #6bffad,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #f3fff8,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$md-orange: (
+  50 : #fff3e7,
+  100 : #ffe0c2,
+  200 : #ffcc99,
+  300 : #ffb870,
+  400 : #ffa852,
+  500 : #ff9933,
+  600 : #ff912e,
+  700 : #ff8627,
+  800 : #ff7c20,
+  900 : #ff6b14,
+  A100 : #ffffff,
+  A200 : #fffcfb,
+  A400 : #ffdac8,
+  A700 : #ffc9ae,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$my-app-primary: mat-palette($md-salmon);
+$my-app-accent: mat-palette($md-mint);
+$my-app-warn: mat-palette($md-orange);
+
+$my-theme: mat-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
+//$my-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+@include angular-material-theme($my-theme);
