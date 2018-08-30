@@ -9,11 +9,13 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule, MatTableModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
+  MatListModule, MatInputModule, MatTableModule } from '@angular/material';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProductsComponent } from './src/app/components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     RegisterComponent,
     UsersComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

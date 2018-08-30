@@ -17,12 +17,13 @@ export class NavComponent {
     .pipe(
       map(result => result.matches)
     );
-  get user(): any {
-    return this.localStorage.get('currentUser');
-  }
+  // get user(): any {
+  //   return this.localStorage.get('currentUser');
+  // }
   logout() {
     this.userService.logout();
   }
-  constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService, private userService: UserService) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+    private localStorage: LocalStorageService, private userService: UserService) {}
 
   }
