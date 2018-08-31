@@ -6,7 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'https://1952ffa4.ngrok.io';
+  // private apiUrl = 'https://1952ffa4.ngrok.io';
+  private apiUrl = 'https://jordomav.ngrok.io';
+
 
   constructor(private http: HttpClient) { }
   get(url) {

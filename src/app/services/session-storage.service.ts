@@ -8,13 +8,13 @@ export class SessionStorageService {
 
   constructor() { }
   set(key, data) {
-    return localStorage.setItem(`${this.app}${key}`, JSON.stringify(data));
+    return sessionStorage.setItem(`${this.app}${key}`, JSON.stringify(data));
   }
   get(key) {
     console.log('thisworks');
-    return JSON.parse(localStorage.getItem(`${this.app}${key}`));
+    return JSON.parse(sessionStorage.getItem(`${this.app}${key}`));
   }
   remove(key) {
-    return localStorage.removeItem(`${this.app}${key}`);
+    return sessionStorage.removeItem(`${this.app}${key}`);
   }
 }
