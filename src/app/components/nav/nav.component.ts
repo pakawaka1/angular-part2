@@ -17,9 +17,9 @@ export class NavComponent {
     .pipe(
       map(result => result.matches)
     );
-  // get user(): any {
-  //   return this.localStorage.get('currentUser');
-  // }
+  getUser(): any {
+    return this.localStorage.get('currentUser');
+  }
   logout() {
     this.userService.logout();
   }
