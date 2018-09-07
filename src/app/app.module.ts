@@ -13,10 +13,6 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { ProfileHomeComponent } from './components/profile/profile-home/profile-home.component';
-import { ProfileAboutComponent } from './components/profile/profile-about/profile-about.component';
-import { ProfileContactComponent } from './components/profile/profile-contact/profile-contact.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
@@ -27,10 +23,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LoginComponent,
     RegisterComponent,
     UsersComponent,
-    ProfileComponent,
-    ProfileHomeComponent,
-    ProfileAboutComponent,
-    ProfileContactComponent,
     NotFoundComponent
   ],
   imports: [
