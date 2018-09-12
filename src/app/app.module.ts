@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubComponent } from './components/github/github.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GithubComponent } from './components/github/github.component';
     RegisterComponent,
     UsersComponent,
     NotFoundComponent,
-    GithubComponent
+    GithubComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
