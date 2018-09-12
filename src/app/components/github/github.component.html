@@ -1,0 +1,16 @@
+<div class ='margin-body'>
+  <h1 class= 'text-center'> My Github Repos</h1>
+  <div>
+    <mat-card class="myCard" *ngFor='let repo of repos'>
+      <mat-card-header>
+        <mat-card-title>{{repo.name}}</mat-card-title>
+        <mat-card-subtitle>{{repo.owner.login}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ showDescription (repo.description) }}</p>
+        <p>{{repo.language}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button href='{{repo.html_url}}' target='_blank'>View
+        <a mat-button href='{{repo.forks_url}}'>Fork
+
