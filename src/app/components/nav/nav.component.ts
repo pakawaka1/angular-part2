@@ -23,6 +23,7 @@ export class NavComponent {
   logout() {
     this.userService.logout();
   }
-  constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService, private userService: UserService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private localStorage:
+    LocalStorageService, private userService: UserService) {}
 
   }

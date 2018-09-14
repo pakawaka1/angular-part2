@@ -1,7 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
+// import Router here
+import { Router } from '@angular/router';
+
 import { UserService } from '../../services/user.service';
+
+// import Auth Service here
+import { AuthService } from '../../services/auth.service';
+
+
+
 import { ErrorStateManager } from '../../classes/error-state-manager';
 
 @Component({
@@ -18,10 +27,22 @@ export class LoginComponent implements OnInit {
     password: ''
   };
   matcher = new ErrorStateManager();
+  // add property here
+  invalidLogin: boolean;
 
-  constructor(private userService: UserService) { }
-  login() {
+  // add auth service here and router too
+
+  constructor(private userService: UserService, private authService: AuthService, private router: Router ) { }
+  login(credentials) {
     this.userService.login(this.authUser);
+    this.authService.login(credentials).subscribe(result => {
+      if (result) {
+        this.router.navigate(['/']);
+       } else {
+         this.invalidLogin = true;
+       }
+
+    });
   }
 
   ngOnInit() {

@@ -18,6 +18,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubComponent } from './components/github/github.component';
 import { SearchPipe } from './pipes/search.pipe';
 
+
+// Imports for Lesson
+import { FakeBackendProvider } from './fake-backend/fake-backend';
+import { MockBackend } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +35,7 @@ import { SearchPipe } from './pipes/search.pipe';
     UsersComponent,
     NotFoundComponent,
     GithubComponent,
-    SearchPipe
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +53,15 @@ import { SearchPipe } from './pipes/search.pipe';
     MatInputModule,
     MatTableModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
   ],
-  providers: [],
+  providers: [
+        // This is for the Lesson
+        // For creating a mock back-end. You don't need these in a real app.
+        FakeBackendProvider,
+        MockBackend,
+        BaseRequestOptions
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
