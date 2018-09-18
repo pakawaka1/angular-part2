@@ -11,32 +11,28 @@ export class GithubComponent implements OnInit {
 
   repos: any;
   searchText: any;
-  constructor( private github: GithubService ) { }
+  constructor(private github: GithubService) { }
 
   getAllRepos() {
-    this.github.getAllRepos().subscribe(res => this.repos = res);
+    this.github.getAllRepos().subscribe(res => { this.repos = res; console.log(res[1]); });
   }
-
   showDescription(desc) {
-    if ( desc === null ) {
+    if (desc === null) {
       return 'There was no description provided';
-
     } else {
       return desc;
     }
   }
-
   checkDate(createdDate) {
-    const d  = new Date;
+    const d = new Date();
     const created = new Date(createdDate);
     d.setFullYear(d.getFullYear() + 1);
     if (d > created) {
       return true;
     }
   }
-
   ngOnInit() {
     this.getAllRepos();
-   }
+  }
 
 }

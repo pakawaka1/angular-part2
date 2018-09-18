@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'github', component: GithubComponent },
   { path: 'user/:id', loadChildren: () => ProfileModule },
+  { path: 'github', component: GithubComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

@@ -6,12 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GithubService {
 
-  githubUrl = 'https://api.github.com/users/pakawaka1/repos';
-
-  constructor( private http: HttpClient ) { }
-
+  githubUrl = 'https://api.github.com/users/Jordomav/repos?per_page=100';
+  constructor(private http: HttpClient) { }
   getAllRepos() {
     return this.http.get(this.githubUrl);
   }
-
 }
