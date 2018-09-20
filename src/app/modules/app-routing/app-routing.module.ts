@@ -7,6 +7,7 @@ import { RegisterComponent } from '../../components/register/register.component'
 import { UsersComponent } from '../../components/users/users.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 import { GithubComponent } from '../../components/github/github.component';
+import { AdminComponent } from '../../components/admin/admin.component';
 
 
 import { ProfileModule } from '../profile/profile.module';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'users', component: UsersComponent },
   { path: 'github', component: GithubComponent },
   { path: 'user/:id', loadChildren: () => ProfileModule },

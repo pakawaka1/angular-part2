@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { AuthService } from '../../services/auth.service';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { UserService } from '../../services/user.service';
 
@@ -12,6 +12,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
+
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -23,6 +24,21 @@ export class NavComponent {
   logout() {
     this.userService.logout();
   }
-  constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService, private userService: UserService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService,
+    private userService: UserService, public authService: AuthService) {}
 
+    // loggedInCheck() {
+    //   return this.authService.isLoggedIn();
+
+    // }
+
+
+    // checkAdmin() {
+    //   return this.authService.isLoggedIn() && this.authService.currentUser.admin;
+    }
+
+    // set admin(token) {
+    //   const admin = new admin(token);
+    //   return this.authService.currentUser.admin;
+    // }
   }

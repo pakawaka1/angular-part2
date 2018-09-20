@@ -1,30 +1,13 @@
-<<<<<<< HEAD
-<div class ='margin-body'>
-  <h1 class= 'text-center'> My Github Repos</h1>
-  <input type='text' placeholder="Search Repos..." [(ngModel)] = 'searchText'>
-  <div>
-    <mat-card class="myCard" *ngFor='let repo of repos | search: searchText'>
-=======
 <div class="margin-body">
   <h1 class="text-center">My GitHub repos</h1>
   <input type="text" placeholder="Search repos..." [(ngModel)]="searchText">
   <div>
     <mat-card class="myCard" *ngFor="let repo of repos | search: searchText">
->>>>>>> 303c584585610a9a98b5a72f70742a0d5fcce196
       <mat-card-header>
         <mat-card-title>{{repo.name}}</mat-card-title>
         <mat-card-subtitle>{{repo.owner.login}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-<<<<<<< HEAD
-        <!-- <p>{{ showDescription (repo.description) }}</p> -->
-        <p [ngClass] = 'repo.language'>{{repo.language}}</p>
-        <p [ngClass] = "checkDate(repo.created_at) ? 'newer-date': ''">Created: {{ repo.created_at | date: "longDate"}}
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href='{{repo.html_url}}' target='_blank'>View</a>
-        <a mat-button href='{{repo.forks_url}}'>Fork</a>
-=======
         <p>{{showDescription(repo.description)}}</p>
         <p [ngClass]="repo.language">{{repo.language}}</p>
         <p [ngClass]="checkDate(repo.created_at) ? 'newer-date' : ''">Created: {{repo.created_at | date: "longDate" }}</p>
@@ -32,7 +15,6 @@
       <mat-card-actions>
         <a mat-button href="{{repo.html_url}}" target="_blank">View</a>
         <a mat-button href="{{repo.forks_url}}">Fork</a>
->>>>>>> 303c584585610a9a98b5a72f70742a0d5fcce196
       </mat-card-actions>
     </mat-card>
   </div>

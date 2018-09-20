@@ -9,20 +9,19 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-<<<<<<< HEAD
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
-  MatListModule, MatInputModule, MatTableModule, MatTabsModule, MatCardModule, MatCard } from '@angular/material';
-=======
 import { MatToolbarModule, MatButtonModule, MatSidenavModule,
   MatIconModule, MatListModule, MatInputModule, MatTableModule,
   MatTabsModule, MatCardModule } from '@angular/material';
->>>>>>> 303c584585610a9a98b5a72f70742a0d5fcce196
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubComponent } from './components/github/github.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { fakeBackendProvider } from './fake-backend/fake-backend';
+import { MockBackend } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,8 @@ import { SearchPipe } from './pipes/search.pipe';
     UsersComponent,
     NotFoundComponent,
     GithubComponent,
-    SearchPipe
+    SearchPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +54,11 @@ import { SearchPipe } from './pipes/search.pipe';
     MatTabsModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
