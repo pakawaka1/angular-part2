@@ -3,10 +3,10 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 
 export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions) {
     // token with admin property set to true
-    // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vc2ggSGFtZWRhbmkiLCJhZG1pbiI6dHJ1ZX0.iy8az1ZDe-_hS8GLDKsQKgPHvWpHl0zkQBqy1QIPOkA';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vc2ggSGFtZWRhbmkiLCJhZG1pbiI6dHJ1ZX0.iy8az1ZDe-_hS8GLDKsQKgPHvWpHl0zkQBqy1QIPOkA';
 
     // token with admin property set to false
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRhdmlkIENlcnZhbnRlcyIsImFkbWluIjpmYWxzZX0.UcblQ6sUrzAdSoyIQwtMjun0VBznX7EieqBlCMF60oY';
+    // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRhdmlkIENlcnZhbnRlcyIsImFkbWluIjpmYWxzZX0.UcblQ6sUrzAdSoyIQwtMjun0VBznX7EieqBlCMF60oY';
 
     backend.connections.subscribe((connection: MockConnection) => {
       // We are using the setTimeout() function to simulate an asynchronous call
@@ -17,7 +17,7 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
         //
         if (connection.request.url.endsWith('/api/authenticate') &&
             connection.request.method === RequestMethod.Post) {
-            let body = JSON.parse(connection.request.getBody());
+            const body = JSON.parse(connection.request.getBody());
 
             if (body.email === 'david@gmail.com' && body.password === '1234') {
               connection.mockRespond(new Response(

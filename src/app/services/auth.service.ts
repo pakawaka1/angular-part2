@@ -11,12 +11,12 @@ import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 export class AuthService {
 
   currentUser: any;
-  admin: boolean;
   constructor(private http: Http, private router: Router) { }
 
   login(credentials) {
     return this.http.post('/api/authenticate', JSON.stringify(credentials))
     .pipe(map(response => {
+      console.log(response.json);
       const result = response.json();
       if (result && result.token) {
         localStorage.setItem('token', result.token);

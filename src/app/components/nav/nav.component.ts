@@ -27,18 +27,4 @@ export class NavComponent {
   constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService,
     private userService: UserService, public authService: AuthService) {}
 
-    // loggedInCheck() {
-    //   return this.authService.isLoggedIn();
-
-    // }
-
-
-    // checkAdmin() {
-    //   return this.authService.isLoggedIn() && this.authService.currentUser.admin;
-    }
-
-    // set admin(token) {
-    //   const admin = new admin(token);
-    //   return this.authService.currentUser.admin;
-    // }
   }
